@@ -1,14 +1,17 @@
 import pyglet
-window = pyglet.window.Window()
+win = pyglet.window.Window()
+# load the image y create the sprite 
+img = pyglet.image.load('assets/hero/sliced/idle-1.png')
+spr = pyglet.sprite(img, x = 300, y = 200)
 
-label = pyglet.text.Label('Hello, world',
-                          font_name='Times New Roman',
-                          font_size=36,
-                          x=window.width//2, y=window.height//2,
-                          anchor_x='center', anchor_y='center')
-@window.event
+def update(dt):
+    pass
+
+@win.event
 def on_draw():
-    window.clear()
-    label.draw()
+    win.clear()
+    # draw the sprite 
+    spr.draw()
 
+pyglet.clock.schedule(update)
 pyglet.app.run()
