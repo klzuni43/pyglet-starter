@@ -15,3 +15,4 @@ def on_draw():
 
 pyglet.clock.schedule(update)
 pyglet.app.run()
+
